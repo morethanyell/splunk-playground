@@ -11,6 +11,6 @@ $localGroups = Get-LocalGroup | Select *
 foreach ($group in $localGroups) {
     $members = Get-LocalGroupMember -Group $group.Name | Select *
     foreach ($member in $members) {
-        Write-Host "$currentDateTime $machineName group_name='$($group.Name)' group_principal_source=$($group.PrincipalSource) group_sid=$($group.SID) group_description='$($group.Description)' member=$member"
+        Write-Output "$currentDateTime $machineName group_name='$($group.Name)' group_principal_source=$($group.PrincipalSource) group_sid=$($group.SID) group_description='$($group.Description)' member=$member"
     }
 }
